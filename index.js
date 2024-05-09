@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-  res.send("Hey this is my API running 🥳");
+  //   res.send("Hey this is my API running 🥳");
   const moonDetails = getMoonSectionData(new Date());
 
   res.send({ message: moonDetails });
