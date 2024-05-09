@@ -18,14 +18,14 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
   res.send("Hey this is my API running 🥳");
-  //   const moonDetails = getMoonSectionData(new Date());
+  const moonDetails = getMoonSectionData(new Date());
 
-  //   res.send({ message: moonDetails });
+  res.send({ message: moonDetails });
 });
 
 app.post("/custom-feeling", (req, res) => {
-  //   const moonDetails = getMoonSectionData(req.body.date);
-  //   res.send({ message: moonDetails });
+  const moonDetails = getMoonSectionData(req.body.date);
+  res.send({ message: moonDetails });
 });
 
 module.exports = app;
