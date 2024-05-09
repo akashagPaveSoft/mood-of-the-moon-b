@@ -1,11 +1,14 @@
-import express from "express";
+// index.js
+const express = require("express");
 import cors from "cors";
 import { getMoonSectionData } from "./utils/astrologyCalculations.js";
 
 const PORT = process.env.PORT || 3001;
 
-export const app = express();
-
+const app = express();
+app.listen(PORT, () => {
+  console.log(`Server listening on ${PORT}`);
+});
 app.use(cors());
 
 // app.use(express.json());
@@ -24,6 +27,4 @@ app.post("/custom-feeling", (req, res) => {
   res.send({ message: moonDetails });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
-});
+module.exports = app;
