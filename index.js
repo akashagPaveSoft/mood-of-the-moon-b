@@ -1,38 +1,20 @@
-import express from "express";
-import sweph, { constants } from "sweph";
-import cors from "cors";
-import {
-  getDetailsOfAllPlanets,
-  calculateNextFeeling,
-  convertDateTimeToJulian,
-  getMoonSectionData,
-  calculatePlanetPositionDetails,
-  ephemerisCalculations,
-} from "./utils/astrologyCalculations.js";
+// index.js
+const express = require("express");
 
-const PORT = process.env.PORT || 3001;
-
-export const app = express();
-
-app.use(cors());
-
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
-app.get("/", (req, res) => {
-  // console.log("Inside / req----> ", req);
-  const moonDetails = getMoonSectionData(new Date());
-  // console.log("Moon Details insde index.js -> ", moonDetails);
-
-  res.send({ message: moonDetails });
-});
-
-app.post("/custom-feeling", (req, res) => {
-  console.log("Insideeee Custom Feelingggg API -----> ", req.body.date);
-  const moonDetails = getMoonSectionData(req.body.date);
-  res.send({ message: moonDetails });
-});
+const app = express();
+const PORT = 4000;
 
 app.listen(PORT, () => {
-  console.log(`Server listening on ${PORT}`);
+  console.log(`API listening on PORT ${PORT} `);
 });
+
+app.get("/", (req, res) => {
+  res.send("Hey this is my API running 🥳");
+});
+
+app.get("/about", (req, res) => {
+  res.send("This is my about route..... ");
+});
+
+// Export the Express API
+module.exports = app;
