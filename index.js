@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 
-// import { getMoonSectionData } from "./utils/astrologyCalculations.js";
+import { getMoonSectionData } from "./utils/astrologyCalculations.js";
 
 const PORT = 3001;
 
