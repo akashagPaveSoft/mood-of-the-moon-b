@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
   const moonDetails = getMoonSectionData(new Date());
 
   res.send({ message: moonDetails });
-  res.send("Hey this is my API running 🥳");
+  //   res.send("Hey this is my API running 🥳");
 });
 
 app.post("/custom-feeling", (req, res) => {
