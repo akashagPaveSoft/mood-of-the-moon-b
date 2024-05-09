@@ -1,7 +1,7 @@
-import sweph, { constants } from "sweph";
-import VOC_DATA from "../constants/voc.js";
-import MOON_PHASE_DATA from "../constants/moon_phase.js";
-import MOOD_DATA from "../constants/aspect_feeling.js";
+const sweph = require("sweph");
+const constants = require("sweph").constants;
+const VOC_DATA = require("../constants/voc.js");
+const MOOD_DATA = require("../constants/aspect_feeling.js");
 
 const VOC_STRING = "Void";
 
